@@ -34,7 +34,6 @@ class AuthControllerTest extends TestCase
             'c_password' => 'pass1234',
         ];
 
-        // Send POST request to the register endpoint
         $response = $this->json('POST', '/api/register', $requestData);
 
         // Assert the response status is 201 (Created)
