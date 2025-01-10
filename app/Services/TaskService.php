@@ -34,7 +34,7 @@ class TaskService extends BaseService
         throw_unless($task, new NotFoundException(
             ResponseMessages::getEntityNotExistMessage("Task")
         ));
-        // print_r($task); exit;
+
         return $task;
     }
 
@@ -55,7 +55,6 @@ class TaskService extends BaseService
     {
         $searchValue = $request->input('search_value');
 
-        // Start the query builder
         $query = Task::query();
     
         if ($searchValue) {
@@ -66,7 +65,8 @@ class TaskService extends BaseService
             });
         }
     
-        // Fetch results
+        $query->orderBy('created_at', 'desc');
+        
         $tasks = $query->get();
         return $tasks;
     }
