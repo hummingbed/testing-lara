@@ -1,0 +1,537 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://127.0.0.1:8000'
+paths:
+  /api/login:
+    post:
+      summary: 'Login user and return token.'
+      operationId: loginUserAndReturnToken
+      description: 'Logs in a user and returns a Bearer token for authentication.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  message: 'User logged in successfully'
+                  data:
+                    access_token: your_generated_token_here
+                    token_type: bearer
+                    expires_in: 3600
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'User logged in successfully'
+                  data:
+                    type: object
+                    properties:
+                      access_token:
+                        type: string
+                        example: your_generated_token_here
+                      token_type:
+                        type: string
+                        example: bearer
+                      expires_in:
+                        type: integer
+                        example: 3600
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'The email of the user.'
+                  example: john@example.com
+                  nullable: false
+                password:
+                  type: string
+                  description: 'The password of the user.'
+                  example: secret123
+                  nullable: false
+              required:
+                - email
+                - password
+      security: []
+  /api/register:
+    post:
+      summary: 'Register a new user.'
+      operationId: registerANewUser
+      description: 'Registers a new user and returns user data.'
+      parameters: []
+      responses:
+        201:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  message: 'User created successfully'
+                  data:
+                    id: 1
+                    name: 'John Doe'
+                    email: john@example.com
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'User created successfully'
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: 'John Doe'
+                      email:
+                        type: string
+                        example: john@example.com
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'The name of the user.'
+                  example: 'John Doe'
+                  nullable: false
+                email:
+                  type: string
+                  description: 'The email of the user.'
+                  example: john@example.com
+                  nullable: false
+                password:
+                  type: string
+                  description: 'The password of the user.'
+                  example: secret123
+                  nullable: false
+                c_password:
+                  type: string
+                  description: 'The value and <code>password</code> must match.'
+                  example: quibusdam
+                  nullable: false
+              required:
+                - name
+                - email
+                - password
+                - c_password
+      security: []
+  /api/refresh:
+    post:
+      summary: 'Refresh authentication token.'
+      operationId: refreshAuthenticationToken
+      description: "Refreshes the user's authentication token."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  message: 'Successfully logged out'
+                  data:
+                    access_token: new_generated_token_here
+                    token_type: bearer
+                    expires_in: 3600
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Successfully logged out'
+                  data:
+                    type: object
+                    properties:
+                      access_token:
+                        type: string
+                        example: new_generated_token_here
+                      token_type:
+                        type: string
+                        example: bearer
+                      expires_in:
+                        type: integer
+                        example: 3600
+      tags:
+        - Authentication
+      security: []
+  /api/logout:
+    post:
+      summary: 'Logout user.'
+      operationId: logoutUser
+      description: 'Logs the user out of the system, invalidating the current token.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  message: 'Successfully logged out'
+                  data: null
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Successfully logged out'
+                  data:
+                    type: string
+                    example: null
+      tags:
+        - Authentication
+      security: []
+  /api/tasks:
+    get:
+      summary: 'Get All Tasks'
+      operationId: getAllTasks
+      description: 'Fetches all tasks with optional filtering and sorting.'
+      parameters:
+        -
+          in: query
+          name: search_value
+          description: 'Optional search term to filter tasks.'
+          example: high
+          required: false
+          schema:
+            type: string
+            description: 'Optional search term to filter tasks.'
+            example: high
+            nullable: false
+        -
+          in: query
+          name: sort_by
+          description: 'Optional column to sort by.'
+          example: due_date
+          required: false
+          schema:
+            type: string
+            description: 'Optional column to sort by.'
+            example: due_date
+            nullable: false
+        -
+          in: query
+          name: sort_order
+          description: 'Optional sort order (asc or desc).'
+          example: asc
+          required: false
+          schema:
+            type: string
+            description: 'Optional sort order (asc or desc).'
+            example: asc
+            nullable: false
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      title: 'Buy groceries'
+                      priority: high
+                      due_date: '2025-01-15'
+                    -
+                      id: 2
+                      title: 'Complete assignment'
+                      priority: medium
+                      due_date: '2025-01-20'
+                  message: 'Tasks retrieved successfully'
+                  status: 200
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        title: 'Buy groceries'
+                        priority: high
+                        due_date: '2025-01-15'
+                      -
+                        id: 2
+                        title: 'Complete assignment'
+                        priority: medium
+                        due_date: '2025-01-20'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        title:
+                          type: string
+                          example: 'Buy groceries'
+                        priority:
+                          type: string
+                          example: high
+                        due_date:
+                          type: string
+                          example: '2025-01-15'
+                  message:
+                    type: string
+                    example: 'Tasks retrieved successfully'
+                  status:
+                    type: integer
+                    example: 200
+      tags:
+        - 'Task Management'
+      security: []
+    post:
+      summary: 'Create Task'
+      operationId: createTask
+      description: 'Creates a new task with the provided details.'
+      parameters: []
+      responses:
+        201:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Task created successfully'
+                  status: 201
+                properties:
+                  message:
+                    type: string
+                    example: 'Task created successfully'
+                  status:
+                    type: integer
+                    example: 201
+      tags:
+        - 'Task Management'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'The title of the task.'
+                  example: 'Buy groceries'
+                  nullable: false
+                description:
+                  type: string
+                  description: 'The description of the task.'
+                  example: 'Purchase milk, bread, and eggs.'
+                  nullable: true
+                due_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2025-01-10T08:12:54'
+                  nullable: false
+                priority:
+                  type: string
+                  description: 'The priority of the task (low, medium, high).'
+                  example: high
+                  nullable: false
+              required:
+                - title
+                - due_date
+      security: []
+  '/api/tasks/{id}':
+    get:
+      summary: 'Get Single Task'
+      operationId: getSingleTask
+      description: 'Fetches a single task by its ID.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    title: 'Buy groceries'
+                    description: 'Purchase milk, bread, and eggs.'
+                    priority: high
+                    due_date: '2025-01-15'
+                  message: 'Task retrieved successfully'
+                  status: 200
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      title:
+                        type: string
+                        example: 'Buy groceries'
+                      description:
+                        type: string
+                        example: 'Purchase milk, bread, and eggs.'
+                      priority:
+                        type: string
+                        example: high
+                      due_date:
+                        type: string
+                        example: '2025-01-15'
+                  message:
+                    type: string
+                    example: 'Task retrieved successfully'
+                  status:
+                    type: integer
+                    example: 200
+      tags:
+        - 'Task Management'
+      security: []
+    put:
+      summary: 'Update Task Api'
+      operationId: updateTaskApi
+      description: 'Updates an existing task by ID.'
+      parameters: []
+      responses:
+        201:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  message: 'Task updated successfully'
+                  data:
+                    id: 1
+                    title: 'Buy groceries'
+                    description: 'Update shopping list'
+                    priority: medium
+                    due_date: '2025-01-15'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Task updated successfully'
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      title:
+                        type: string
+                        example: 'Buy groceries'
+                      description:
+                        type: string
+                        example: 'Update shopping list'
+                      priority:
+                        type: string
+                        example: medium
+                      due_date:
+                        type: string
+                        example: '2025-01-15'
+      tags:
+        - 'Task Management'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'The new title of the task.'
+                  example: 'Buy groceries'
+                  nullable: false
+                description:
+                  type: string
+                  description: 'The new description of the task.'
+                  example: 'Update shopping list.'
+                  nullable: true
+                due_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2025-01-10T08:12:54'
+                  nullable: false
+                priority:
+                  type: string
+                  description: 'The new priority of the task (low, medium, high).'
+                  example: medium
+                  nullable: false
+      security: []
+    delete:
+      summary: 'Delete Task'
+      operationId: deleteTask
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Task deleted successfully'
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'Task deleted successfully'
+                  status:
+                    type: integer
+                    example: 200
+      tags:
+        - 'Task Management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the task.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Authentication
+    description: "\nAPI endpoints for user authentication."
+  -
+    name: 'Task Management'
+    description: "\nAPIs for managing tasks"
