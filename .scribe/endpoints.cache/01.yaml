@@ -204,7 +204,7 @@ endpoints:
         name: due_date
         description: 'Must be a valid date.'
         required: true
-        example: '2025-01-11T09:11:53'
+        example: '2025-01-11T09:22:55'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -223,7 +223,7 @@ endpoints:
     cleanBodyParameters:
       title: 'Buy groceries'
       description: 'Purchase milk, bread, and eggs.'
-      due_date: '2025-01-11T09:11:53'
+      due_date: '2025-01-11T09:22:55'
       priority: high
     fileParameters: []
     responses:
@@ -302,7 +302,7 @@ endpoints:
         name: due_date
         description: 'Must be a valid date.'
         required: true
-        example: '2025-01-11T09:11:53'
+        example: '2025-01-11T09:22:55'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -321,7 +321,7 @@ endpoints:
     cleanBodyParameters:
       title: 'Buy groceries'
       description: 'Update shopping list.'
-      due_date: '2025-01-11T09:11:53'
+      due_date: '2025-01-11T09:22:55'
       priority: medium
     fileParameters: []
     responses:

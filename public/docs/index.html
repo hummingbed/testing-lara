@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://34.244.254.103/";
+        var tryItOutBaseUrl = "http://127.0.0.1:8000";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -125,7 +125,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>http://34.244.254.103/</code>
+    <strong>Base URL</strong>: <code>http://127.0.0.1:8000</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 
@@ -149,7 +149,7 @@
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://34.244.254.103/api/login" \
+    "http://127.0.0.1:8000/api/login" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -161,7 +161,7 @@
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://34.244.254.103/api/login"
+    "http://127.0.0.1:8000/api/login"
 );
 
 const headers = {
@@ -306,21 +306,21 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://34.244.254.103/api/register" \
+    "http://127.0.0.1:8000/api/register" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
     \"name\": \"John Doe\",
     \"email\": \"john@example.com\",
     \"password\": \"secret123\",
-    \"c_password\": \"aspernatur\"
+    \"c_password\": \"aperiam\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://34.244.254.103/api/register"
+    "http://127.0.0.1:8000/api/register"
 );
 
 const headers = {
@@ -332,7 +332,7 @@ let body = {
     "name": "John Doe",
     "email": "john@example.com",
     "password": "secret123",
-    "c_password": "aspernatur"
+    "c_password": "aperiam"
 };
 
 fetch(url, {
@@ -469,10 +469,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="c_password"                data-endpoint="POSTapi-register"
-               value="aspernatur"
+               value="aperiam"
                data-component="body">
     <br>
-<p>The value and <code>password</code> must match. Example: <code>aspernatur</code></p>
+<p>The value and <code>password</code> must match. Example: <code>aperiam</code></p>
         </div>
         </form>
 
@@ -489,14 +489,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://34.244.254.103/api/refresh" \
+    "http://127.0.0.1:8000/api/refresh" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://34.244.254.103/api/refresh"
+    "http://127.0.0.1:8000/api/refresh"
 );
 
 const headers = {
@@ -612,14 +612,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://34.244.254.103/api/logout" \
+    "http://127.0.0.1:8000/api/logout" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://34.244.254.103/api/logout"
+    "http://127.0.0.1:8000/api/logout"
 );
 
 const headers = {
@@ -735,7 +735,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://34.244.254.103/api/tasks?search_value=high&amp;sort_by=due_date&amp;sort_order=asc" \
+    --get "http://127.0.0.1:8000/api/tasks?search_value=high&amp;sort_by=due_date&amp;sort_order=asc" \
     --header "Authorization: string required The bearer token used to authenticate the request. Example: Bearer your_token_here" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -743,7 +743,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://34.244.254.103/api/tasks"
+    "http://127.0.0.1:8000/api/tasks"
 );
 
 const params = {
@@ -922,7 +922,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://34.244.254.103/api/tasks/1" \
+    --get "http://127.0.0.1:8000/api/tasks/1" \
     --header "Authorization: string required The bearer token used to authenticate the request. Example: Bearer your_token_here" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -930,7 +930,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://34.244.254.103/api/tasks/1"
+    "http://127.0.0.1:8000/api/tasks/1"
 );
 
 const headers = {
@@ -1072,14 +1072,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://34.244.254.103/api/tasks" \
+    "http://127.0.0.1:8000/api/tasks" \
     --header "Authorization: string required The bearer token used to authenticate the request. Example: Bearer your_token_here" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
     \"title\": \"Buy groceries\",
     \"description\": \"Purchase milk, bread, and eggs.\",
-    \"due_date\": \"2025-01-11T09:11:53\",
+    \"due_date\": \"2025-01-11T09:22:55\",
     \"priority\": \"high\"
 }"
 </code></pre></div>
@@ -1087,7 +1087,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://34.244.254.103/api/tasks"
+    "http://127.0.0.1:8000/api/tasks"
 );
 
 const headers = {
@@ -1099,7 +1099,7 @@ const headers = {
 let body = {
     "title": "Buy groceries",
     "description": "Purchase milk, bread, and eggs.",
-    "due_date": "2025-01-11T09:11:53",
+    "due_date": "2025-01-11T09:22:55",
     "priority": "high"
 };
 
@@ -1232,10 +1232,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="due_date"                data-endpoint="POSTapi-tasks"
-               value="2025-01-11T09:11:53"
+               value="2025-01-11T09:22:55"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-01-11T09:11:53</code></p>
+<p>Must be a valid date. Example: <code>2025-01-11T09:22:55</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>priority</code></b>&nbsp;&nbsp;
@@ -1263,14 +1263,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://34.244.254.103/api/tasks/1" \
+    "http://127.0.0.1:8000/api/tasks/1" \
     --header "Authorization: string required The bearer token used to authenticate the request. Example: Bearer your_token_here" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
     \"title\": \"Buy groceries\",
     \"description\": \"Update shopping list.\",
-    \"due_date\": \"2025-01-11T09:11:53\",
+    \"due_date\": \"2025-01-11T09:22:55\",
     \"priority\": \"medium\"
 }"
 </code></pre></div>
@@ -1278,7 +1278,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://34.244.254.103/api/tasks/1"
+    "http://127.0.0.1:8000/api/tasks/1"
 );
 
 const headers = {
@@ -1290,7 +1290,7 @@ const headers = {
 let body = {
     "title": "Buy groceries",
     "description": "Update shopping list.",
-    "due_date": "2025-01-11T09:11:53",
+    "due_date": "2025-01-11T09:22:55",
     "priority": "medium"
 };
 
@@ -1442,10 +1442,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="due_date"                data-endpoint="PUTapi-tasks--id-"
-               value="2025-01-11T09:11:53"
+               value="2025-01-11T09:22:55"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-01-11T09:11:53</code></p>
+<p>Must be a valid date. Example: <code>2025-01-11T09:22:55</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>priority</code></b>&nbsp;&nbsp;
@@ -1473,7 +1473,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://34.244.254.103/api/tasks/1" \
+    "http://127.0.0.1:8000/api/tasks/1" \
     --header "Authorization: string required The bearer token used to authenticate the request. Example: Bearer your_token_here" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1481,7 +1481,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://34.244.254.103/api/tasks/1"
+    "http://127.0.0.1:8000/api/tasks/1"
 );
 
 const headers = {
