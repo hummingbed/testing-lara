@@ -5,7 +5,7 @@ info:
   version: 1.0.0
 servers:
   -
-    url: 'http://127.0.0.1:8000'
+    url: 'http://34.244.254.103'
 paths:
   /api/login:
     post:
@@ -135,7 +135,7 @@ paths:
                 c_password:
                   type: string
                   description: 'The value and <code>password</code> must match.'
-                  example: quibusdam
+                  example: reiciendis
                   nullable: false
               required:
                 - name
@@ -357,7 +357,7 @@ paths:
                 due_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2025-01-10T08:12:54'
+                  example: '2025-01-11T09:04:29'
                   nullable: false
                 priority:
                   type: string
@@ -467,7 +467,7 @@ paths:
       tags:
         - 'Task Management'
       requestBody:
-        required: false
+        required: true
         content:
           application/json:
             schema:
@@ -486,13 +486,15 @@ paths:
                 due_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2025-01-10T08:12:54'
+                  example: '2025-01-11T09:04:29'
                   nullable: false
                 priority:
                   type: string
                   description: 'The new priority of the task (low, medium, high).'
                   example: medium
                   nullable: false
+              required:
+                - due_date
       security: []
     delete:
       summary: 'Delete Task'
