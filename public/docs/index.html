@@ -61,6 +61,11 @@
                     <a href="#introduction">Introduction</a>
                 </li>
                             </ul>
+                    <ul id="tocify-header-authenticating-requests" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="authenticating-requests">
+                    <a href="#authenticating-requests">Authenticating requests</a>
+                </li>
+                            </ul>
                     <ul id="tocify-header-authentication" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="authentication">
                     <a href="#authentication">Authentication</a>
@@ -120,11 +125,12 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>http://127.0.0.1:8000</code>
+    <strong>Base URL</strong>: <code>http://34.244.254.103/</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 
-        
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+<p>This API is not authenticated.</p>
 
         <h1 id="authentication">Authentication</h1>
 
@@ -307,7 +313,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"name\": \"John Doe\",
     \"email\": \"john@example.com\",
     \"password\": \"secret123\",
-    \"c_password\": \"reiciendis\"
+    \"c_password\": \"aspernatur\"
 }"
 </code></pre></div>
 
@@ -326,7 +332,7 @@ let body = {
     "name": "John Doe",
     "email": "john@example.com",
     "password": "secret123",
-    "c_password": "reiciendis"
+    "c_password": "aspernatur"
 };
 
 fetch(url, {
@@ -463,10 +469,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="c_password"                data-endpoint="POSTapi-register"
-               value="reiciendis"
+               value="aspernatur"
                data-component="body">
     <br>
-<p>The value and <code>password</code> must match. Example: <code>reiciendis</code></p>
+<p>The value and <code>password</code> must match. Example: <code>aspernatur</code></p>
         </div>
         </form>
 
@@ -1073,7 +1079,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"title\": \"Buy groceries\",
     \"description\": \"Purchase milk, bread, and eggs.\",
-    \"due_date\": \"2025-01-11T09:04:29\",
+    \"due_date\": \"2025-01-11T09:11:53\",
     \"priority\": \"high\"
 }"
 </code></pre></div>
@@ -1093,7 +1099,7 @@ const headers = {
 let body = {
     "title": "Buy groceries",
     "description": "Purchase milk, bread, and eggs.",
-    "due_date": "2025-01-11T09:04:29",
+    "due_date": "2025-01-11T09:11:53",
     "priority": "high"
 };
 
@@ -1226,10 +1232,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="due_date"                data-endpoint="POSTapi-tasks"
-               value="2025-01-11T09:04:29"
+               value="2025-01-11T09:11:53"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-01-11T09:04:29</code></p>
+<p>Must be a valid date. Example: <code>2025-01-11T09:11:53</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>priority</code></b>&nbsp;&nbsp;
@@ -1264,7 +1270,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"title\": \"Buy groceries\",
     \"description\": \"Update shopping list.\",
-    \"due_date\": \"2025-01-11T09:04:29\",
+    \"due_date\": \"2025-01-11T09:11:53\",
     \"priority\": \"medium\"
 }"
 </code></pre></div>
@@ -1284,7 +1290,7 @@ const headers = {
 let body = {
     "title": "Buy groceries",
     "description": "Update shopping list.",
-    "due_date": "2025-01-11T09:04:29",
+    "due_date": "2025-01-11T09:11:53",
     "priority": "medium"
 };
 
@@ -1436,10 +1442,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="due_date"                data-endpoint="PUTapi-tasks--id-"
-               value="2025-01-11T09:04:29"
+               value="2025-01-11T09:11:53"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-01-11T09:04:29</code></p>
+<p>Must be a valid date. Example: <code>2025-01-11T09:11:53</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>priority</code></b>&nbsp;&nbsp;

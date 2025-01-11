@@ -131,7 +131,7 @@ endpoints:
         name: c_password
         description: 'The value and <code>password</code> must match.'
         required: true
-        example: reiciendis
+        example: aspernatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -141,7 +141,7 @@ endpoints:
       name: 'John Doe'
       email: john@example.com
       password: secret123
-      c_password: reiciendis
+      c_password: aspernatur
     fileParameters: []
     responses:
       -

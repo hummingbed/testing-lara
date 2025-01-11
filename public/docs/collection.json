@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "1e5f465e-5ec6-4374-aa0d-b2751dd2c0d5",
+        "_postman_id": "e42814a6-7019-4548-860a-20609f0029e5",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -79,7 +79,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"John Doe\",\"email\":\"john@example.com\",\"password\":\"secret123\",\"c_password\":\"reiciendis\"}"
+                            "raw": "{\"name\":\"John Doe\",\"email\":\"john@example.com\",\"password\":\"secret123\",\"c_password\":\"aspernatur\"}"
                         },
                         "description": "Registers a new user and returns user data.",
                         "auth": {
@@ -302,7 +302,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"Buy groceries\",\"description\":\"Purchase milk, bread, and eggs.\",\"due_date\":\"2025-01-11T09:04:29\",\"priority\":\"high\"}"
+                            "raw": "{\"title\":\"Buy groceries\",\"description\":\"Purchase milk, bread, and eggs.\",\"due_date\":\"2025-01-11T09:11:53\",\"priority\":\"high\"}"
                         },
                         "description": "Creates a new task with the provided details.",
                         "auth": {
@@ -352,7 +352,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"Buy groceries\",\"description\":\"Update shopping list.\",\"due_date\":\"2025-01-11T09:04:29\",\"priority\":\"medium\"}"
+                            "raw": "{\"title\":\"Buy groceries\",\"description\":\"Update shopping list.\",\"due_date\":\"2025-01-11T09:11:53\",\"priority\":\"medium\"}"
                         },
                         "description": "Updates an existing task by ID.",
                         "auth": {
