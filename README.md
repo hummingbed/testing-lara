@@ -9,6 +9,10 @@ This is a Laravel-based web application with a fully documented API, generated u
 ## [staging scribe doc](http://34.244.254.103/docs)
 
 
+## [localhost postman doc](https://documenter.getpostman.com/view/14032725/2sAYQWJCt2)
+
+## [localhost scribe doc](http://127.0.0.1:8000/docs/docs)
+
 
 
 ## Features
