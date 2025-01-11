@@ -2,6 +2,15 @@
 
 This is a Laravel-based web application with a fully documented API, generated using [Scribe](http://127.0.0.1:8000/docs). on http://127.0.0.1:8000/
 
+## [staging app url](http://34.244.254.103/)
+
+## [staging postman doc](https://documenter.getpostman.com/view/14032725/2sAYQWJYk8)
+
+## [staging scribe doc](http://34.244.254.103/docs)
+
+
+
+
 ## Features
 
 - RESTful API endpoints
