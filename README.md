@@ -1,28 +1,7 @@
 # Laravel Application
 
-This is a Laravel-based web application with a fully documented API, generated using [Scribe](http://127.0.0.1:8000/docs). on http://127.0.0.1:8000/
 
-## [staging app url](http://34.244.254.103/)
-
-## [staging postman doc](https://documenter.getpostman.com/view/14032725/2sAYQWJYk8)
-
-## [staging scribe doc](http://34.244.254.103/docs)
-
-
-## [localhost postman doc](https://documenter.getpostman.com/view/14032725/2sAYQWJCt2)
-
-## [localhost scribe doc](http://127.0.0.1:8000/docs/docs)
-
-
-
-## Features
-
-- RESTful API endpoints
-- User registration and authentication
-- Task management functionality
-- Rate-limiting middleware for security
-- Comprehensive unit and feature tests
-- Laravel Scribe-generated API documentation
+## [localhost postman doc](https://documenter.getpostman.com/view/14032725/2sAYQWJCt2#4a29f340-a2b9-48a7-8b20-0068bf4925e5)
 
 
 ---
@@ -75,5 +54,19 @@ php artisan migrate
 
 ```
 php artisan test
+
+```
+
+### 8. Build Docker
+
+```
+docker-compose up --build
+
+```
+
+### 9. Serve docker on http://localhost:8080
+
+```
+http://localhost:8080
 
 ```
